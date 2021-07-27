@@ -19,11 +19,19 @@ const shipFactory = (name, shipLength) => {
     }
     return sunked;
   };
+  // // VARIABLES CONTAINING SHIP COORDINATES IN GAMEBOARD
+  // let shipCoordinates;
+  // // REGISTER COORDINATES WHEN PLACING SHIP ON THE BOARD
+  // const placeShip = (a, b) => {
+  //   shipCoordinates = [a, b];
+  //   return shipCoordinates;
+  // };
   return {
     name,
     shipLength,
     isSunk,
     hit,
+    // placeShip,
   };
 };
 
