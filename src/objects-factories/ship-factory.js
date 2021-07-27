@@ -31,7 +31,6 @@ const shipFactory = (name, shipLength) => {
     shipLength,
     isSunk,
     hit,
-    // placeShip,
   };
 };
 

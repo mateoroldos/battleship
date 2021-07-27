@@ -11,10 +11,10 @@ const gameboardFactory = (gameboardLength) => {
     gameboardArray[i] = Array(gameboardLength).fill('o');
   }
   // ATTACK A SPECIFIC SPOT IN THE GAMEBOARD
-  const atackSpot = (coordinates) => {
+  const attackSpot = (coordinates) => {
     // If the spot has already been selected => return undefined
     if (gameboardArray[coordinates[0]][coordinates[1]].includes('x')) return;
-    // If the spot has a ship => Mark ship as attacked (0x)
+    // If the spot has a ship => Mark ship as attacked (add a 'x' to the array)
     // and call the hit() function for the correct ship
     if (Array.isArray(gameboardArray[coordinates[0]][coordinates[1]])) {
       gameboardArray[coordinates[0]][coordinates[1]].push('x');
@@ -33,10 +33,10 @@ const gameboardFactory = (gameboardLength) => {
       if (verticalSpacesLength < shipLength) return;
       // Check if all spots are empty
       const selectedSpots = [];
-      for (let i = 0; i < shipLength; i++) {
+      for (let i = 0; i < shipLength; i += 1) {
         selectedSpots.push(gameboardArray[coordinates[0] + i][coordinates[1]]);
       }
-      if (!selectedSpots.every(element => element === 'o')) return;
+      if (!selectedSpots.every((element) => element === 'o')) return;
       // Place ship
       for (let i = 0; i < shipLength; i += 1) {
         gameboardArray[coordinates[0] + i][coordinates[1]] = [shipNumber, i];
@@ -49,17 +49,17 @@ const gameboardFactory = (gameboardLength) => {
       if (horizontalSpacesLength < shipLength) return;
       // Check if all spots are empty
       const selectedSpots = [];
-      for (let i = 0; i < shipLength; i++) {
+      for (let i = 0; i < shipLength; i += 1) {
         selectedSpots.push(gameboardArray[coordinates[0]][coordinates[1] + i]);
       }
-      if (!selectedSpots.every(element => element === 'o')) return;
+      if (!selectedSpots.every((element) => element === 'o')) return;
       // Place ship
       for (let i = 0; i < shipLength; i += 1) {
         gameboardArray[coordinates[0]][coordinates[1] + i] = [shipNumber, i];
       }
     }
   };
-  return { gameboardArray, atackSpot, placeShip };
+  return { gameboardArray, attackSpot, placeShip };
 };
 
 export default gameboardFactory;
