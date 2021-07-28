@@ -1,0 +1,56 @@
+/* General Styles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Board Style */
+.my-board {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.enemy-board {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.board-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.board-spot {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+/* Ships Style */
+.ship {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.ship-spot {
+  background-color: blue;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+}
